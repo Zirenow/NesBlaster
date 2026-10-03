@@ -15,9 +15,9 @@ config/description="Simple corruptor for various ROMs"
 config/version="1.1"
 run/main_scene="res://Master.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+boot_splash/show_image=false
 boot_splash/image="res://prog_logo.png"
 config/icon="res://prog_logo.png"
-boot_splash/minimum_display_time=10
 
 [display]
 
