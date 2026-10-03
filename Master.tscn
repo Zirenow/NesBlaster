@@ -1,0 +1,141 @@
+[gd_scene load_steps=3 format=3 uid="uid://c12fortcl7nhd"]
+
+[ext_resource type="Theme" uid="uid://3p153o2gty6v" path="res://theme.tres" id="1_a2obp"]
+[ext_resource type="Script" path="res://master.gd" id="1_ackgx"]
+
+[node name="Master" type="Control" node_paths=PackedStringArray("target_name_box", "file_name_box", "start_range", "end_range", "should_override", "engine_type", "severity_slider", "severity_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a2obp")
+script = ExtResource("1_ackgx")
+target_name_box = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/TargetName")
+file_name_box = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/FileName")
+start_range = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/Start/RangeBegin")
+end_range = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/End/RangeEnd")
+should_override = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice3/CheckButton")
+engine_type = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice4/OptionButton")
+severity_slider = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/HSlider")
+severity_label = NodePath("Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice5/SevPercLab")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.989, 1)
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="Options" type="PanelContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/Options"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "File:"
+
+[node name="TargetName" type="LineEdit" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+editable = false
+
+[node name="Label2" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save file as:"
+
+[node name="FileName" type="LineEdit" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="HBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/Start"]
+layout_mode = 2
+text = "Begin:"
+
+[node name="RangeBegin" type="LineEdit" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/Start"]
+layout_mode = 2
+
+[node name="End" type="HBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/End"]
+layout_mode = 2
+text = "End:   "
+
+[node name="RangeEnd" type="LineEdit" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/End"]
+layout_mode = 2
+
+[node name="choice3" type="HBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice3"]
+layout_mode = 2
+text = "Detect EOF"
+
+[node name="CheckButton" type="CheckButton" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice3"]
+layout_mode = 2
+
+[node name="choice4" type="HBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice4"]
+layout_mode = 2
+text = "Engine"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice4"]
+layout_mode = 2
+item_count = 3
+popup/item_0/text = "Randomize"
+popup/item_1/text = "Flip"
+popup/item_1/id = 1
+popup/item_2/text = "Shift"
+popup/item_2/id = 2
+
+[node name="choice5" type="HBoxContainer" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="SevPercLab" type="Label" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice5"]
+layout_mode = 2
+text = "Severity %"
+
+[node name="HSlider" type="HSlider" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ChooseFile" type="Button" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 0
+text = "Load ROM"
+
+[node name="CorruptBtn" type="Button" parent="Panel/MarginContainer/Options/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Corrupt"
+
+[connection signal="toggled" from="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/choice3/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="pressed" from="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/ChooseFile" to="." method="_on_choose_file_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/Options/MarginContainer/VBoxContainer/CorruptBtn" to="." method="_on_corrupt_btn_pressed"]
