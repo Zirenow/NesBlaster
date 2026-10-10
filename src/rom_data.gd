@@ -11,3 +11,4 @@ func _init(p:String) -> void:
 	path=p
 	size=handle.get_length()
 	data=handle.get_buffer(size)
+ 

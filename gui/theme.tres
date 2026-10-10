@@ -1,6 +1,8 @@
-[gd_resource type="Theme" load_steps=15 format=3 uid="uid://3p153o2gty6v"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://3p153o2gty6v"]
 
-[ext_resource type="FontFile" uid="uid://38ywhg28d3bm" path="res://Inter-VariableFont_opsz,wght.ttf" id="1_huav6"]
+[ext_resource type="FontFile" uid="uid://38ywhg28d3bm" path="res://gui/Inter-VariableFont_opsz,wght.ttf" id="1_huav6"]
+[ext_resource type="Texture2D" uid="uid://d31ku2vh31ok4" path="res://gui/icons/toggle_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="2_t0tmc"]
+[ext_resource type="Texture2D" uid="uid://ww5gibvnjx5k" path="res://gui/icons/toggle_off_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg" id="3_s1t4i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wbvr7"]
 content_margin_left = 6.0
@@ -129,6 +131,24 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u08mn"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.195895, 0.215427, 0.254994, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r0fgx"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.00392157, 0.443137, 0.984314, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
@@ -137,6 +157,8 @@ Button/styles/focus = SubResource("StyleBoxFlat_wbvr7")
 Button/styles/hover = SubResource("StyleBoxFlat_mx3ic")
 Button/styles/normal = SubResource("StyleBoxFlat_wbvr7")
 Button/styles/pressed = SubResource("StyleBoxFlat_mckrm")
+CheckButton/icons/checked = ExtResource("2_t0tmc")
+CheckButton/icons/unchecked = ExtResource("3_s1t4i")
 CheckButton/styles/normal = SubResource("StyleBoxFlat_3toyv")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_rbv5k")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_rbv5k")
@@ -156,3 +178,8 @@ PopupMenu/colors/font_hover_color = Color(0.046891, 0.0937819, 0.129458, 1)
 PopupMenu/fonts/font = ExtResource("1_huav6")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_8gmtv")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_p7jb1")
+TabContainer/constants/side_margin = 13
+TabContainer/fonts/font = ExtResource("1_huav6")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_u08mn")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_r0fgx")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_u08mn")
