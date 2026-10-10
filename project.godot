@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="NesBlaster_v1_1"
+config/name="NesBlaster_v1.2-linux"
 config/description="Simple corruptor for various ROMs"
 config/version="1.1"
 run/main_scene="res://Master.tscn"
