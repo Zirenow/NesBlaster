@@ -1,4 +1,5 @@
 # NesBlaster
+
 ![Godot](https://img.shields.io/badge/Godot-478CBF?style=flat&logo=godotengine&logoColor=white)
 ![Stars](https://img.shields.io/github/stars/Zirenow/NesBlaster?style=rounded&color=yellow)
 ![Forks](https://img.shields.io/github/forks/Zirenow/NesBlaster?style=rounded&color=blue)
@@ -7,7 +8,7 @@
 ![Repo Size](https://img.shields.io/github/repo-size/Zirenow/NesBlaster?style=rounded&color=green)
 ![License](https://img.shields.io/github/license/Zirenow/NesBlaster?style=rounded&color=orange)
 ## What is this?
-*NesBlaster* is a simple tool that can be used to corrupt games and other software
+**NesBlaster** is a simple tool that can be used to corrupt games and other software
 
 ## What is corrupting?
 Its the act of purposely breaking game to produce often funny, interesting or even creepy bugs.
@@ -15,8 +16,11 @@ Such acts are done using hex editors or specialised software like this one.
 You can learn more on [Corrupt wiki](https://corrupt.wiki/)
 
 ## 🔨 Installation
-You can either clone and build this project yourself or just download the executable.
-Whatever works for you.
+Just download the binary and you are good to go
+### Building yourself
+`git clone https://github.com/Zirenow/NesBlaster`
+
+Then open in Godot 4.3 and export
 
 ## 📄 How to use
 The interface was designed to be as straight forward as possible. But i will explain some parts that might be confusing
@@ -30,3 +34,6 @@ This is the method of scrambling bytes. Currently you can choose:
 
 ## 🎮 Tested 3rd party emulators
 - Fceux 2.6.5
+
+## 👀 Screenshots
+![Super Mario Bross](mario.png)
